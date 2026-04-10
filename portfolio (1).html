@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Meer Tahmidur Rahman | Embedded Systems & IoT Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#07080f;
+  --surface:#10121c;
+  --surface2:#181a28;
+  --surface3:#1f2235;
+  --cyan:#00e5ff;
+  --purple:#9b5cf6;
+  --green:#22d3a0;
+  --pink:#f472b6;
+  --amber:#fbbf24;
+  --text:#eef0f8;
+  --muted:#7a7d9a;
+  --border:#252840;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+a{color:var(--cyan);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,8,15,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0.85rem 2rem;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:1.4rem;list-style:none;}
+.nav-links a{color:var(--muted);font-size:0.82rem;transition:color 0.2s;}
+.nav-links a:hover{color:var(--cyan);text-decoration:none;}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;inset:0;background:
+  radial-gradient(ellipse 55% 50% at 20% 50%,rgba(0,229,255,0.06) 0%,transparent 65%),
+  radial-gradient(ellipse 45% 40% at 80% 40%,rgba(155,92,246,0.07) 0%,transparent 65%);}
+.hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:4rem;max-width:980px;margin:0 auto;flex-wrap:wrap;}
+.hero-photo-wrap{flex-shrink:0;}
+.hero-photo{width:210px;height:210px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box, linear-gradient(135deg,var(--cyan),var(--purple)) border-box;box-shadow:0 0 40px rgba(0,229,255,0.15);}
+.hero-text{flex:1;min-width:260px;}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(34,211,160,0.1);border:1px solid rgba(34,211,160,0.35);color:var(--green);font-size:0.76rem;padding:0.28rem 0.9rem;border-radius:50px;margin-bottom:1.25rem;letter-spacing:0.08em;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.1;margin-bottom:0.5rem;}
+.name-grad{background:linear-gradient(135deg,var(--cyan) 0%,var(--purple) 60%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-role{font-size:1rem;color:var(--purple);font-weight:600;margin-bottom:0.4rem;}
+.hero-loc{font-size:0.82rem;color:var(--muted);margin-bottom:0.9rem;}
+.hero-sub{font-size:0.92rem;color:var(--muted);max-width:500px;margin-bottom:1.5rem;line-height:1.65;}
+.visa-badge{display:inline-block;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.35);color:var(--amber);font-size:0.72rem;padding:0.22rem 0.75rem;border-radius:50px;margin-bottom:1.25rem;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.75rem;}
+.hb{font-size:0.72rem;padding:0.22rem 0.65rem;border-radius:50px;border:1px solid;}
+.hb-c{background:rgba(0,229,255,0.08);border-color:rgba(0,229,255,0.25);color:var(--cyan);}
+.hb-p{background:rgba(155,92,246,0.1);border-color:rgba(155,92,246,0.3);color:#c4a0ff;}
+.hb-g{background:rgba(34,211,160,0.08);border-color:rgba(34,211,160,0.3);color:var(--green);}
+.btn-group{display:flex;gap:0.85rem;flex-wrap:wrap;}
+.btn{display:inline-block;padding:0.65rem 1.6rem;border-radius:8px;font-weight:600;font-size:0.88rem;transition:all 0.2s;}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;}
+.btn-primary:hover{opacity:0.85;text-decoration:none;}
+.btn-outline{border:1px solid var(--cyan);color:var(--cyan);}
+.btn-outline:hover{background:rgba(0,229,255,0.08);text-decoration:none;}
+
+/* SECTIONS */
+section{padding:5rem 2rem;}
+.container{max-width:1000px;margin:0 auto;}
+.section-title{font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:700;margin-bottom:0.4rem;}
+.section-line{width:44px;height:3px;border-radius:2px;margin-bottom:2.75rem;}
+.sl-cyan{background:linear-gradient(90deg,var(--cyan),var(--purple));}
+.sl-purple{background:linear-gradient(90deg,var(--purple),var(--pink));}
+.sl-green{background:linear-gradient(90deg,var(--green),var(--cyan));}
+.sl-amber{background:linear-gradient(90deg,var(--amber),var(--pink));}
+
+/* ABOUT */
+#about{background:var(--surface);}
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start;}
+.about-photo{width:190px;height:190px;border-radius:20px;object-fit:cover;object-position:center top;border:2px solid var(--border);}
+.about-text p{color:var(--muted);margin-bottom:0.8rem;font-size:0.92rem;}
+.highlight{color:var(--cyan);}
+.highlight-g{color:var(--green);}
+.highlight-p{color:#c4a0ff;}
+.about-links{display:flex;gap:0.65rem;margin-top:1.25rem;flex-wrap:wrap;}
+.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:0.32rem 0.85rem;border-radius:50px;font-size:0.8rem;transition:all 0.2s;}
+.chip:hover{border-color:var(--cyan);color:var(--cyan);text-decoration:none;}
+
+/* SKILLS */
+#skills{}
+.skills-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;}
+.skill-cat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;transition:border-color 0.2s;}
+.skill-cat:hover{border-color:var(--border);}
+.skill-cat h4{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.9rem;}
+.h4-c{color:var(--cyan);}
+.h4-p{color:var(--purple);}
+.h4-g{color:var(--green);}
+.h4-a{color:var(--amber);}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.stag{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:0.76rem;padding:0.18rem 0.55rem;border-radius:6px;}
+
+/* PROJECTS */
+#projects{background:var(--surface);}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
+.project-card{background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:1.4rem;transition:all 0.25s;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.pc-cyan::before{background:linear-gradient(90deg,var(--cyan),var(--purple));}
+.pc-green::before{background:linear-gradient(90deg,var(--green),var(--cyan));}
+.pc-purple::before{background:linear-gradient(90deg,var(--purple),var(--pink));}
+.pc-amber::before{background:linear-gradient(90deg,var(--amber),var(--pink));}
+.project-card:hover{transform:translateY(-4px);border-color:#3a3d5a;}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.7rem;}
+.project-icon{font-size:1.4rem;}
+.proj-links a{color:var(--muted);font-size:0.76rem;transition:color 0.2s;margin-left:0.65rem;}
+.proj-links a:hover{color:var(--cyan);text-decoration:none;}
+.project-title{font-size:0.98rem;font-weight:700;margin-bottom:0.25rem;}
+.project-date{font-size:0.73rem;color:var(--muted);margin-bottom:0.5rem;}
+.project-grade{display:inline-block;background:rgba(34,211,160,0.1);border:1px solid rgba(34,211,160,0.3);color:var(--green);font-size:0.7rem;padding:0.1rem 0.5rem;border-radius:50px;margin-bottom:0.5rem;}
+.project-desc{color:var(--muted);font-size:0.84rem;flex:1;margin-bottom:1rem;}
+.project-desc ul{padding-left:1.1rem;}
+.project-desc li{margin-bottom:0.2rem;}
+.tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.tag{font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:50px;border:1px solid;}
+.tag-c{background:rgba(0,229,255,0.07);border-color:rgba(0,229,255,0.2);color:var(--cyan);}
+.tag-p{background:rgba(155,92,246,0.08);border-color:rgba(155,92,246,0.25);color:#c4a0ff;}
+.tag-g{background:rgba(34,211,160,0.07);border-color:rgba(34,211,160,0.25);color:var(--green);}
+.tag-a{background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.25);color:var(--amber);}
+
+/* EXPERIENCE */
+#experience{}
+.timeline{position:relative;padding-left:2rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--purple),var(--pink));}
+.exp-item{position:relative;margin-bottom:2.5rem;}
+.exp-dot{position:absolute;left:-2.33rem;top:0.35rem;width:13px;height:13px;border-radius:50%;}
+.dot-c{background:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.2);}
+.dot-p{background:var(--purple);box-shadow:0 0 0 3px rgba(155,92,246,0.2);}
+.exp-role{font-size:1.02rem;font-weight:700;}
+.exp-company{font-size:0.88rem;margin-bottom:0.2rem;}
+.ec-c{color:var(--cyan);}
+.ec-p{color:var(--purple);}
+.exp-date{color:var(--muted);font-size:0.76rem;margin-bottom:0.6rem;}
+.exp-desc{color:var(--muted);font-size:0.87rem;}
+.exp-desc ul{padding-left:1.1rem;margin-top:0.4rem;}
+.exp-desc li{margin-bottom:0.25rem;}
+
+/* EDUCATION */
+#education{background:var(--surface);}
+.edu-grid{display:grid;gap:1.1rem;}
+.edu-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.4rem;display:flex;gap:1.1rem;align-items:flex-start;transition:border-color 0.2s;}
+.edu-card:hover{border-color:#3a3d5a;}
+.edu-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.ei-c{background:rgba(0,229,255,0.1);}
+.ei-p{background:rgba(155,92,246,0.1);}
+.ei-g{background:rgba(34,211,160,0.1);}
+.edu-school{font-weight:700;font-size:0.98rem;}
+.edu-degree{color:var(--muted);font-size:0.84rem;}
+.edu-date{color:var(--muted);font-size:0.76rem;}
+.edu-grade{font-size:0.8rem;margin-top:0.2rem;}
+.eg-c{color:var(--cyan);}
+.eg-g{color:var(--green);}
+
+/* CERTS */
+#certifications{}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:0.9rem;}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0.95rem 1rem;transition:border-color 0.2s;}
+.cert-card:hover{border-color:#3a3d5a;}
+.cert-issuer{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;}
+.ci-c{color:var(--cyan);}
+.ci-p{color:var(--purple);}
+.ci-a{color:var(--amber);}
+.cert-name{font-size:0.84rem;font-weight:600;margin-bottom:0.15rem;}
+.cert-date{font-size:0.72rem;color:var(--muted);}
+
+/* AWARDS */
+#awards{background:var(--surface);}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
+.award-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s;}
+.award-card:hover{border-color:rgba(251,191,36,0.4);}
+.award-icon{font-size:1.6rem;flex-shrink:0;}
+.award-title{font-weight:700;font-size:0.95rem;color:var(--amber);margin-bottom:0.2rem;}
+.award-desc{color:var(--muted);font-size:0.83rem;}
+
+/* CONTACT */
+#contact{}
+.contact-inner{max-width:540px;margin:0 auto;text-align:center;}
+.contact-inner p{color:var(--muted);margin-bottom:1.75rem;font-size:0.93rem;}
+.contact-links{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
+.contact-link{display:flex;align-items:center;gap:0.5rem;background:var(--surface2);border:1px solid var(--border);padding:0.6rem 1.1rem;border-radius:10px;color:var(--text);font-size:0.85rem;transition:all 0.2s;}
+.contact-link:hover{border-color:var(--cyan);color:var(--cyan);text-decoration:none;}
+.form-group{margin-bottom:0.85rem;text-align:left;}
+.form-group label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.32rem;}
+.form-group input,.form-group textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.65rem 0.95rem;color:var(--text);font-size:0.9rem;font-family:inherit;transition:border-color 0.2s;outline:none;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--cyan);}
+.form-group textarea{resize:vertical;min-height:110px;}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;color:#000;padding:0.78rem;border-radius:8px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:opacity 0.2s;font-family:inherit;}
+.btn-submit:hover{opacity:0.85;}
+
+footer{text-align:center;padding:2rem;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);}
+
+@media(max-width:700px){
+  .hero-inner{flex-direction:column;text-align:center;}
+  .hero-badges{justify-content:center;}
+  .btn-group{justify-content:center;}
+  .about-grid{grid-template-columns:1fr;text-align:center;}
+  .about-photo{margin:0 auto;}
+  .about-links{justify-content:center;}
+  .nav-links{gap:0.75rem;}
+  .edu-card{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">&lt;MTR /&gt;</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="data:image/jpeg;base64,PHOTO_BASE64_PLACEHOLDER" alt="Meer Tahmidur Rahman" onerror="this.style.display='none';document.getElementById('avatar-fallback').style.display='flex'"/>
+      <div id="avatar-fallback" style="display:flex;width:210px;height:210px;border-radius:50%;background:linear-gradient(135deg,#9b5cf6,#00e5ff);align-items:center;justify-content:center;font-size:3.5rem;font-weight:800;color:#fff;border:3px solid transparent;">MTR</div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-tag"><span class="dot"></span> Open to 2026 Summer Internship</div>
+      <h1><span class="name-grad">Meer Tahmidur<br/>Rahman</span></h1>
+      <div class="hero-role">Embedded Systems & IoT Engineer</div>
+      <div class="hero-loc">📍 Dublin 9, Ireland · +353 089 499 6597 · meerfahim58@gmail.com</div>
+      <div class="visa-badge">🇮🇪 Irish Stamp 2 Visa — 20 hrs/week (40 hrs during holidays)</div>
+      <div class="hero-badges">
+        <span class="hb hb-c">Python</span>
+        <span class="hb hb-c">C / C++</span>
+        <span class="hb hb-p">Embedded Linux</span>
+        <span class="hb hb-p">STM32 · Arduino</span>
+        <span class="hb hb-g">KiCad PCB</span>
+        <span class="hb hb-g">Raspberry Pi</span>
+        <span class="hb hb-c">Django</span>
+        <span class="hb hb-p">FPGA · VHDL</span>
+        <span class="hb hb-g">IoT</span>
+      </div>
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-title">About Me</div>
+    <div class="section-line sl-cyan"></div>
+    <div class="about-grid">
+      <div>
+        <img class="about-photo" src="data:image/jpeg;base64,PHOTO_BASE64_PLACEHOLDER" alt="Meer Tahmidur Rahman" onerror="this.style.display='none'"/>
+      </div>
+      <div class="about-text">
+        <p>I'm an <span class="highlight">MSc Electronic & Computer Technology</span> student at Dublin City University (IoT track, Jan 2026–Present), with a high-achieving BEng in Electrical & Electronic Engineering from BRAC University — <span class="highlight-g">CGPA 3.92/4.00, Vice-Chancellor's List ×5</span>.</p>
+        <p>I bridge hardware and software: designing custom <span class="highlight">2-layer PCBs in KiCad</span>, writing interrupt-driven firmware in <span class="highlight">C/C++ for STM32/Arduino/Raspberry Pi</span>, and building full-stack web applications with <span class="highlight-p">Django</span>. My Final Year Project (autonomous CNC Farm-Bot) was graded <span class="highlight-g">A+</span>.</p>
+        <p>Beyond university, I co-founded <span class="highlight">PegBoard BD</span> — Bangladesh's first metal pegboard manufacturer — and grew it to a #1 Google ranking. I thrive at the intersection of embedded intelligence, IoT, and practical product engineering.</p>
+        <div class="about-links">
+          <a href="https://github.com" class="chip">⌥ GitHub</a>
+          <a href="https://linkedin.com/in/meer-tahmidur-rahman" class="chip">in LinkedIn</a>
+          <a href="mailto:meerfahim58@gmail.com" class="chip">✉ meerfahim58@gmail.com</a>
+          <a href="#" class="chip">↓ Resume (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-title">Technical Skills</div>
+    <div class="section-line sl-purple"></div>
+    <div class="skills-cats">
+      <div class="skill-cat">
+        <h4 class="h4-c">Programming</h4>
+        <div class="skill-tags">
+          <span class="stag">Python</span><span class="stag">C</span><span class="stag">C++</span><span class="stag">Java</span><span class="stag">HTML/CSS/JS</span><span class="stag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4 class="h4-p">Embedded / IoT</h4>
+        <div class="skill-tags">
+          <span class="stag">Arduino</span><span class="stag">STM32</span><span class="stag">ATMEGA32</span><span class="stag">Raspberry Pi 4</span><span class="stag">Embedded Linux</span><span class="stag">I2C</span><span class="stag">SPI</span><span class="stag">UART</span><span class="stag">GPIO</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4 class="h4-g">PCB & EDA</h4>
+        <div class="skill-tags">
+          <span class="stag">KiCad</span><span class="stag">SolidWorks PCB</span><span class="stag">Verilog</span><span class="stag">VHDL</span><span class="stag">MATLAB</span><span class="stag">Proteus</span><span class="stag">PSpice</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h4 class="h4-a">Web & Tools</h4>
+        <div class="skill-tags">
+          <span class="stag">Django</span><span class="stag">SQLite</span><span class="stag">Bootstrap</span><span class="stag">WordPress</span><span class="stag">WooCommerce</span><span class="stag">Git</span><span class="stag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-title">Projects</div>
+    <div class="section-line sl-cyan"></div>
+    <div class="projects-grid">
+
+      <div class="project-card pc-cyan">
+        <div class="project-top"><div class="project-icon">⏰</div><div class="proj-links"><a href="#">GitHub ↗</a></div></div>
+        <div class="project-title">Embedded Linux RTC Alarm System</div>
+        <div class="project-date">Jan – Mar 2026 · Dublin City University</div>
+        <div class="project-desc">
+          <ul>
+            <li>Interfaced DS3231 over I2C using i2c-tools on Raspberry Pi 4</li>
+            <li>Interrupt-driven GPIO alarm handler with dual-alarm logic and snooze in C/C++</li>
+            <li>Configurable square-wave output; signal integrity verified with oscilloscope</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag tag-c">Raspberry Pi</span><span class="tag tag-c">C/C++</span><span class="tag tag-c">I2C</span><span class="tag tag-c">Embedded Linux</span></div>
+      </div>
+
+      <div class="project-card pc-purple">
+        <div class="project-top"><div class="project-icon">📚</div><div class="proj-links"><a href="#">GitHub ↗</a></div></div>
+        <div class="project-title">BookStack – Library Management System</div>
+        <div class="project-date">Jan 2026 – Present · Dublin City University</div>
+        <div class="project-desc">
+          <ul>
+            <li>Full-stack Django/SQLite app with book browsing, borrow-request workflows</li>
+            <li>Role-based access control (admin vs. student), custom Django Admin, REST-style URLs</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag tag-p">Django</span><span class="tag tag-p">Python</span><span class="tag tag-p">SQLite</span><span class="tag tag-p">Bootstrap</span></div>
+      </div>
+
+      <div class="project-card pc-green">
+        <div class="project-top"><div class="project-icon">🌱</div><div class="proj-links"><a href="#">Project ↗</a></div></div>
+        <div class="project-title">Autonomous CNC Farm-Bot</div>
+        <div class="project-date">Sep 2022 – Apr 2023 · BRAC University Final Year</div>
+        <div class="project-grade">Graded A+</div>
+        <div class="project-desc">
+          <ul>
+            <li>3-axis CNC robot for autonomous seeding/watering; Embedded C/C++ on Arduino/STM32</li>
+            <li>DHT22, soil moisture, ultrasonic sensors with real-time web dashboard</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag tag-g">STM32</span><span class="tag tag-g">Arduino</span><span class="tag tag-g">C/C++</span><span class="tag tag-g">Sensor Integration</span></div>
+      </div>
+
+      <div class="project-card pc-amber">
+        <div class="project-top"><div class="project-icon">📡</div><div class="proj-links"></div></div>
+        <div class="project-title">Custom RFID Attendance PCB</div>
+        <div class="project-date">Dec 2023 – Jan 2024</div>
+        <div class="project-desc">
+          <ul>
+            <li>2-layer KiCad PCB: Arduino Nano + RC522 RFID (SPI) + WS2812B NeoPixels</li>
+            <li>Gerber files generated and sent to manufacture</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag tag-a">KiCad</span><span class="tag tag-a">PCB Design</span><span class="tag tag-a">SPI</span><span class="tag tag-a">Arduino</span></div>
+      </div>
+
+      <div class="project-card pc-green">
+        <div class="project-top"><div class="project-icon">📡</div><div class="proj-links"><a href="#">GitHub ↗</a></div></div>
+        <div class="project-title">Real-Time MQTT Data Visualisation — Qt & Raspberry Pi</div>
+        <div class="project-date">2026 · Dublin City University · Embedded Systems Coursework</div>
+        <div class="project-desc">
+          <ul>
+            <li>MQTT publisher-subscriber architecture using Paho MQTT C library with Mosquitto broker</li>
+            <li>ADXL345 accelerometer via I2C to calculate live pitch & roll; CPU temperature streaming</li>
+            <li>Qt/QCustomPlot GUI with real-time graph updates, connect/disconnect controls & manual input</li>
+            <li>Thread-safe async MQTT callbacks using Qt signal-slot mechanism</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag tag-g">MQTT</span><span class="tag tag-g">Qt (C++)</span><span class="tag tag-g">Raspberry Pi</span><span class="tag tag-g">I2C</span><span class="tag tag-g">IoT</span><span class="tag tag-g">Linux</span><span class="tag tag-g">Real-Time Systems</span></div>
+      </div>
+
+      <div class="project-card pc-cyan">
+        <div class="project-top"><div class="project-icon">🛒</div><div class="proj-links"><a href="#">Live ↗</a></div></div>
+        <div class="project-title">PegBoard BD – E-Commerce Platform</div>
+        <div class="project-date">2023 – 2025</div>
+        <div class="project-desc">Official site for Bangladesh's first metal pegboard brand. Achieved #1 Google ranking for 'Pegboard in Bangladesh' with product browsing, secure payments, and order tracking.</div>
+        <div class="tags"><span class="tag tag-c">WordPress</span><span class="tag tag-c">WooCommerce</span></div>
+      </div>
+
+      <div class="project-card pc-purple">
+        <div class="project-top"><div class="project-icon">🏆</div><div class="proj-links"><a href="#">Project ↗</a></div></div>
+        <div class="project-title">Smart Home Automation Cube</div>
+        <div class="project-date">Aug 2018 – Feb 2019</div>
+        <div class="project-grade">Champion — RUET Mechatronics Showcase</div>
+        <div class="project-desc">Orientation-based appliance control for elderly & disabled users. Won Champion at RUET; presented at 4 national competitions.</div>
+        <div class="tags"><span class="tag tag-p">Python</span><span class="tag tag-p">Arduino</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-title">Experience</div>
+    <div class="section-line sl-green"></div>
+    <div class="timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot dot-c"></div>
+        <div class="exp-role">Co-Founder & Engineering Lead</div>
+        <div class="exp-company ec-c">PegBoard BD · Dhaka, Bangladesh</div>
+        <div class="exp-date">2023 – 2025 · Bangladesh's first metal pegboard manufacturer</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Founded and scaled a hardware product business from concept to market — metal pegboards, 3D-printed mounts, custom desk accessories</li>
+            <li>Designed and launched WooCommerce site achieving <strong>#1 Google ranking</strong> for 'Pegboard in Bangladesh'</li>
+            <li>Managed end-to-end operations: product development, PCB-adjacent mechanical design, supplier coordination, QC, and customer comms</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot dot-p"></div>
+        <div class="exp-role">Fundraising Volunteer</div>
+        <div class="exp-company ec-p">BRAC University</div>
+        <div class="exp-date">Oct 2018 – Oct 2021 · 3 years</div>
+        <div class="exp-desc">Contributed to university fundraising initiatives and community outreach events.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-title">Education</div>
+    <div class="section-line sl-purple"></div>
+    <div class="edu-grid">
+
+      <div class="edu-card">
+        <div class="edu-icon ei-c">🎓</div>
+        <div>
+          <div class="edu-school">Dublin City University, Ireland</div>
+          <div class="edu-degree">MSc Electronic & Computer Technology (Internet of Things)</div>
+          <div class="edu-date">Jan 2026 – Jul 2027</div>
+          <div class="edu-grade eg-c">Modules: Connected Embedded Systems · Web App Dev · IoT Edge Security · IoT</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon ei-p">🏛️</div>
+        <div>
+          <div class="edu-school">BRAC University, Bangladesh</div>
+          <div class="edu-degree">BEng Electrical & Electronic Engineering</div>
+          <div class="edu-date">2018 – 2023</div>
+          <div class="edu-grade eg-g">CGPA: 3.92 / 4.00 · Vice-Chancellor's List ×5 · Coursework: Digital Electronics, DSP, Control Systems, VLSI, Microprocessors</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon ei-g">📖</div>
+        <div>
+          <div class="edu-school">Brahmanbaria Govt. College</div>
+          <div class="edu-degree">Higher School Certificate — Science</div>
+          <div class="edu-date">Jun 2015 – May 2017</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon ei-g">📖</div>
+        <div>
+          <div class="edu-school">Annada Govt. High School, Brahmanbaria</div>
+          <div class="edu-degree">Secondary School Certificate — Science</div>
+          <div class="edu-date">2010 – 2015</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-title">Certifications & Awards</div>
+    <div class="section-line sl-amber"></div>
+
+    <!-- Awards row -->
+    <div style="margin-bottom:2rem;">
+      <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--amber);margin-bottom:1rem;">🏆 Awards & Achievements</h3>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-icon">🥇</div>
+          <div>
+            <div class="award-title">Champion — RUET Mechatronics</div>
+            <div class="award-desc">Smart Home Automation Cube; presented at 4 national competitions</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🎖️</div>
+          <div>
+            <div class="award-title">Vice-Chancellor's List ×5</div>
+            <div class="award-desc">BRAC University — top academic achievement across 5 semesters</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🌍</div>
+          <div>
+            <div class="award-title">IELTS 7.0 — C1 English</div>
+            <div class="award-desc">Listening 8.0 · Reading 7.5 · Writing 6.5 · Speaking 6.5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certs grid -->
+    <h3 style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--cyan);margin-bottom:1rem;">📜 Licences & Certifications</h3>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-issuer ci-a">NASBA</div><div class="cert-name">Critical Thinking & Problem Solving</div><div class="cert-date">Dec 2023</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-a">NASBA</div><div class="cert-name">Project Management Foundations</div><div class="cert-date">Dec 2023</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">Learning SolidWorks PCB</div><div class="cert-date">Dec 2023 · SOLIDWORKS, KiCad</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">Learning FPGA Development</div><div class="cert-date">Nov 2023 · Verilog, VHDL</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">Learning Arduino: Foundations</div><div class="cert-date">Nov 2023 · Arduino</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">Python Essential Training</div><div class="cert-date">Nov 2023 · Python</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">Git from Scratch</div><div class="cert-date">Nov 2023 · Git</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-c">LinkedIn Learning</div><div class="cert-name">HTML Essential Training</div><div class="cert-date">Nov 2023 · HTML</div></div>
+      <div class="cert-card"><div class="cert-issuer ci-p">PMI</div><div class="cert-name">Electrical Systems: Panels, VFDs & Transformers</div><div class="cert-date">Nov 2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-title">Get in Touch</div>
+    <div class="section-line sl-cyan" style="margin-left:auto;margin-right:auto;"></div>
+    <div class="contact-inner">
+      <p>Actively seeking a <strong style="color:var(--cyan);">2026 Summer Internship</strong> in embedded systems or IoT within the Irish tech ecosystem. Open to collaborations too — let's connect!</p>
+      <div class="contact-links">
+        <a href="mailto:meerfahim58@gmail.com" class="contact-link">✉ meerfahim58@gmail.com</a>
+        <a href="https://linkedin.com/in/meer-tahmidur-rahman" class="contact-link">in LinkedIn</a>
+        <a href="https://github.com" class="contact-link">⌥ GitHub</a>
+        <a href="tel:+353089499659" class="contact-link">📞 +353 089 499 6597</a>
+      </div>
+      <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"/></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Tell me about the opportunity..."></textarea></div>
+      <button class="btn-submit">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built by <span style="color:var(--cyan);">Meer Tahmidur Rahman</span> · Dublin, Ireland · 2026</p>
+</footer>
+
+<script>
+// Inject the uploaded photo as base64
+(function(){
+  const b64 = '__PHOTO_DATA__';
+  if(b64 && b64 !== '__PHOTO_DATA__'){
+    document.querySelectorAll('img[src*="PHOTO_BASE64_PLACEHOLDER"]').forEach(img=>{
+      img.src = 'data:image/jpeg;base64,' + b64;
+    });
+  }
+})();
+</script>
+</body>
+</html>
